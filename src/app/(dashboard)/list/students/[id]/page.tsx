@@ -1,10 +1,12 @@
 import Announcements from "@/components/Announcements";
-import BigCalendar from "@/components/BigCalandar";
+import BigCalandarContainer from "@/components/BigCalandarContainer";
 import Performance from "@/components/Performance";
+import { getAuthDetails } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-const SingleStudentPage = () => {
+const SingleStudentPage = async () => {
+  const { userId } = await getAuthDetails();
   return (
     <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
       {/* LEFT */}
@@ -110,7 +112,7 @@ const SingleStudentPage = () => {
         {/* BOTTOM */}
         <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
           <h1>Student&apos;s Schedule</h1>
-          <BigCalendar />
+          <BigCalandarContainer type="classId" id={userId!} />
         </div>
       </div>
       {/* RIGHT */}
