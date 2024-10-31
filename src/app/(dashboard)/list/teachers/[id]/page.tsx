@@ -1,6 +1,6 @@
 import Announcements from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalandar";
-import FormModal from "@/components/FormModal";
+import FormContainer from "@/components/FormContainer";
 import Performance from "@/components/Performance";
 import { role } from "../../../../../lib/data";
 import Image from "next/image";
@@ -29,7 +29,7 @@ const SingleTeacherPage = () => {
               <div className="flex items-center gap-4">
                 <h1 className="text-xl font-semibold">Leonard Snyder</h1>
                 {role === "admin" && (
-                  <FormModal
+                  <FormContainer
                     table="teacher"
                     type="update"
                     data={{
