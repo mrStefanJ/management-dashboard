@@ -1,6 +1,6 @@
 "use client";
 
-import { deleteClass, deleteSubject, deleteTeacher } from "@/lib/actions";
+import { deleteClass, deleteExam, deleteStudent, deleteSubject, deleteTeacher } from "@/lib/actions";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -13,8 +13,8 @@ const deleteActionMap = {
   subject: deleteSubject,
   class: deleteClass,
   teacher: deleteTeacher,
-  // student: deleteStudent,
-  // exam: deleteExam,
+  student: deleteStudent,
+  exam: deleteExam,
   // TODO: OTHER DELETE ACTIONS
   parent: deleteSubject,
   lesson: deleteSubject,
@@ -87,7 +87,7 @@ const forms: {
   ),
 };
 
-const FormContainer = ({
+const FormModal = ({
   table,
   type,
   data,
@@ -130,7 +130,7 @@ const FormContainer = ({
           Delete
         </button>
       </form>
-    ) : type === "create" || type === "update" ? (
+    ) :  type === "create" || type === "update" ? (
       forms[table](setOpen, type, data, relatedData)
     ) : (
       "Form not found!"
@@ -162,4 +162,4 @@ const FormContainer = ({
   );
 };
 
-export default FormContainer;
+export default FormModal;

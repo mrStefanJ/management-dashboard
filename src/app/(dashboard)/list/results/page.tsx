@@ -42,7 +42,7 @@ const renderRow = async (item: ResultList) => {
         <div className="flex items-center gap-2">
           {(role === "admin" || role === "teacher") && (
             <>
-              <FormContainer table="result" type="update" data={item} />
+              {/* <FormContainer table="result" type="update" data={item} /> */}
               <FormContainer table="result" type="delete" id={item.id} />
             </>
           )}
