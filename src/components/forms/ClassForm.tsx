@@ -50,12 +50,9 @@ const ClassForm = ({
       setOpen(false);
       router.refresh();
     }
-  }, [state]);
+  }, [state, router, type, setOpen]);
 
   const { teachers, grades } = relatedData;
-
-  console.log("State: ", state);
-  console.log("Data: ", data);
 
   return (
     <form className="flex flex-col gap-8" onSubmit={onSubmit}>
